@@ -57,7 +57,7 @@ function resume() {
 
     loadResume();
   }, [id]);
-  console.log(feedback);
+
   return (
     <main className="!pt-0 ">
       <nav className="resume-nav">
@@ -71,7 +71,10 @@ function resume() {
       <div className="flex flex-row w-full max-lg:flex-col-reverse">
         <section className="feedback-section bg-[url('/images/bg-small.svg')] bg-cover h-[100vh] sticky top-0 items-center justify-center">
           {imageUrl && resumeUrl && (
-            <div className="animate-in fade-in duration-1000 gradient-border max-sm:m-0 max-sm:h-[90%] h-fit max-w-xl w-fit">
+            <div
+              className="animate-in fade-in duration-1000 gradient-border max-sm:m-0 
+             max-w-xl h-fit lg:h-[95%] max-h-[90vh] w-fit"
+            >
               <a href={resumeUrl} target="_blank">
                 <img
                   src={imageUrl}
@@ -90,7 +93,7 @@ function resume() {
               <Summary feedback={feedback} />
               <ATS
                 score={feedback.ATS.score || 0}
-                suggestion={feedback.ATS.tips || []}
+                suggestions={feedback.ATS.tips || []}
               />
               <Details feedback={feedback} />
             </div>
